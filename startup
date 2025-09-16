@@ -1,0 +1,13 @@
+#!/bin/sh
+sleep 1 &
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11 &
+/usr/bin/gnome-keyring-daemon --start --components=secrets &
+/usr/bin/gnome-keyring-daemon --start --components=ssh &
+xscreensaver --nosplash &
+volumeicon &
+dunst &
+qlipper &
+nm-applet &
+picom -f --fade-in-step=0.95 &
+nitrogen --restore &
+./screentear-nvidia-fix.sh & # rest of the things are done inside this script

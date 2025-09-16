@@ -1,0 +1,47 @@
+# This is an example for icewm hotkey definition file.
+# It will be installed as /usr/share/icewm/keys.
+# Place your variants in /etc/X11/icewm or in $HOME/.icewm since
+# modifications to this file will be overwritten when you reinstall icewm.
+#
+# A list of all valid keyboard symbols can be found in
+# /usr/include/X11/keysymdef.h, XF86keysym.h, ...
+# Omit the XK_ prefixs and replace XF86XK_ prefixes by XF86.
+# Valid modifiers are Alt, AltGr, Ctrl, Shift, Meta, Super and Hyper.
+#
+key "Super+Enter"            x-terminal-emulator
+key "Alt+Ctrl+b"            xdg-open about:blank
+key "Alt+Ctrl+s"            xdg-open https://www.google.com
+
+key "Super+KP_Subtract"     ~/.icewm/vol-dwn.sh
+key "Super+KP_Add"          ~/.icewm/vol-up.sh
+key "Super+KP_Decimal" 		~/.icewm/vol-mute.sh
+
+# "Multimedia key" bindings for Xorg. Gather the keycodes of your
+# advanced function keys by watching the output of the xev command
+# whilst pressing those keys and map those symbols using xmodmap.
+# Note that some of these may interfere with other listeners,
+# like systemd for the suspend key events.
+#
+# key "XF86Standby"         /bin/sh -c "{ test -e /run/systemd/system && systemctl suspend; } ||:"
+# key "XF86Sleep"           /bin/sh -c "{ test -e /run/systemd/system && systemctl suspend; } ||:"
+key "XF86AudioLowerVolume"  ~/.icewm/vol-dwn.sh  #amixer sset Master 5%-
+key "XF86AudioRaiseVolume"  ~/.icewm/vol-up.sh  #amixer sset Master 5%+
+key "XF86AudioMute"         ~/.icewm/vol-mute.sh  #amixer sset Master toggle
+key "XF86HomePage"         sensible-browser about:blank
+#key "XF86Search"            sensible-browser https://www.duckduckgo.com
+#key "XF86Eject"             eject
+key "XF86Calculator"        /bin/sh -c "gnome-calculator || xcalc || ( type bc >/dev/null 2>&1 && x-terminal-emulator -e bc -l)"
+
+switchkey "Super+p"         icewm-menu-xrandr
+
+# custom
+key "Super+d" rofi -show drun -show-icons
+key "Super+e" nemo
+
+key "Print" gnome-screenshot --interactive
+key "Shift+Print" gnome-screenshot --area
+
+key "Super+Shift+r" ~/.icewm/icewm-refresh.sh
+
+key "Super+Shift+Left" ~/.icewm/activewindow_monitor_moveleft.sh
+key "Super+Shift+Right" ~/.icewm/activewindow_monitor_moveright.sh

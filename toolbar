@@ -1,0 +1,14 @@
+# This is a default toolbar definition file for IceWM
+#
+# Place your personal variant in $HOME/.icewm directory.
+
+prog "Night Light" /usr/share/icons/ePapirus-Dark/128x128/apps/redshift.svg ~/.icewm/night-light.sh
+
+prog XTerm ! x-terminal-emulator
+#prog FTE fte fte
+#prog Netscape netscape netscape
+#prog    "Vim" vim /usr/bin/gvim -f
+
+prog "Files" /usr/share/icons/ePapirus-Dark/128x128/apps/nemo.svg nemo
+prog "Browser" ! x-www-browser
+prog "Firefox" /usr/share/icons/ePapirus-Dark/128x128/apps/firefox.svg firefox

@@ -1,0 +1,16 @@
+# To configure on IceWM
+
+## Programs to install:
+arandr
+nitrogen
+rofi
+nm-applet
+volumeicon-alsa
+lxappearance
+xscreensaver
+xsct
+
+## Other
+
+- Install themes
+- Configure menu, preferences and keys
